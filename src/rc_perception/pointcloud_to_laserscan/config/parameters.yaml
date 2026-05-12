@@ -1,0 +1,16 @@
+pointcloud_to_laserscan_node:
+  ros__parameters: 
+      transform_tolerance: 0.01,  # 坐标变换容忍度
+      # 根据实际雷达安装高度以及参数调整
+      min_height: 0,  # 只考虑在这个高度范围内的点
+      max_height: 0.5,  # 只考虑在这个高度范围内的点
+      angle_min: -0.5236,  # -M_PI/6，扫描的最小角度
+      angle_max: 0.5236,  # M_PI/6，扫描的最大角度
+      angle_increment: 0.0109,  # M_PI/360.0，角度增量，即分辨率
+      scan_time: 0.1,  # 每秒钟的扫描时间
+      range_min: 0.25,  # 激光扫描的最小测量距离
+      range_max: 20,  # 激光扫描的最大测量距离
+      use_inf: True,  # 是否使用 INF（无限距离）表示测量失败的点
+      inf_epsilon: 1.0,  # INF 允许的误差值
+      queue_size: 20  # 消息队列大小
+      
