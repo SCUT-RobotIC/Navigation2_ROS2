@@ -12,7 +12,8 @@ def generate_launch_description():
     pkg_share = get_package_share_directory('rc_nav_bringup')
     nav2_share = get_package_share_directory('nav2_bringup')
     pointlio_params = os.path.join(pkg_share, 'config', 'pointlio_mid360.yaml')
-    nav2_params = os.path.join(pkg_share, 'config', 'nav2_params.yaml')
+    nav2_params_mapping = os.path.join(pkg_share, 'config', 'nav2_params_mapping.yaml')
+    nav2_params_known_map = os.path.join(pkg_share, 'config', 'nav2_params_known_map.yaml')
     pointlio_rviz_cfg = os.path.join(pkg_share, 'rviz', 'pointlio.rviz')
     nav2_rviz_cfg = os.path.join(nav2_share, 'rviz', 'nav2_default_view.rviz')
 
@@ -59,7 +60,7 @@ def generate_launch_description():
             'use_sim_time': use_sim_time,
             'slam': 'True',
             'map': map_yaml,
-            'params_file': nav2_params,
+            'params_file': nav2_params_mapping,
             'autostart': 'True',
             'use_composition': 'False',
             'use_respawn': 'False',
@@ -73,7 +74,7 @@ def generate_launch_description():
             'use_sim_time': use_sim_time,
             'slam': 'False',
             'map': map_yaml,
-            'params_file': nav2_params,
+            'params_file': nav2_params_known_map,
             'autostart': 'True',
             'use_composition': 'False',
             'use_respawn': 'False',
