@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(rc_navigation)
+project(rc_navigation_test)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
@@ -22,9 +22,7 @@ endif()
 
 install(
   PROGRAMS
-    launch/bringup_rc_navigation.py
     launch/map_server_launch.py
-    launch/navigation_launch.py
     launch/rviz_launch.py
   DESTINATION share/${PROJECT_NAME}/launch
 )
